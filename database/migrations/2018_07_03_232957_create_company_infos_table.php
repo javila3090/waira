@@ -21,6 +21,9 @@ class CreateCompanyInfosTable extends Migration
             $table->string('email_1');
             $table->string('email_2')->nullable();
             $table->string('address');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('logo')->nullable();
             $table->timestamps();
         });

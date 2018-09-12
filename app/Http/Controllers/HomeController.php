@@ -25,6 +25,7 @@ class HomeController extends Controller
         $bannerIntermedio2 = Banner::where('banner_type_id',5)->first();
         $clients = Section::where('section_type_id',5)->first();
         $clientBanners = Banner::where('banner_type_id',6)->get();
+        $portfolioBanners = Banner::where('banner_type_id',7)->get();
         
         //Mapa
         $config = array();
@@ -46,6 +47,6 @@ class HomeController extends Controller
             $map = app('map')->create_map();
             $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
 
-            return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','map'));
+            return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','map','portfolioBanners'));
         }
     }

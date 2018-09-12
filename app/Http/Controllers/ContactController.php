@@ -39,7 +39,7 @@ class ContactController extends Controller
 
      Message::create($request->all());
 
-     Mail::to('lipocero.centrodekinesiologia@gmail.com')->send(new NewMessageMail($request->name,$request->email,$request->message));
+     Mail::to('javila3090@gmail.com')->send(new NewMessageMail($request->name,$request->email,$request->message));
 
      return response()->json(['message' => 'OK']);
    }

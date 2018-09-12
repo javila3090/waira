@@ -17,7 +17,15 @@
                                 <br>
                                 <h3>{{$sb->title}}</h3>
                                 <hr>
-                                <p class="text-muted">{!!$sb->caption!!}</p>
+                                <br>
+                                <button data-toggle="collapse" class="btn btn-theme size-12px" data-target="#{{$sb->id}}">Ver más</button>
+                                <br>
+                                <br>
+                                <div id="{{$sb->id}}" class="collapse text-left" style="padding-top: 20px;">
+                                    <div class="col-md-12 text-justify"> 
+                                        {!!$sb->caption!!}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         @endforeach

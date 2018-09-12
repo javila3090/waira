@@ -51,8 +51,12 @@
         <script src="js/new-age.min.js"></script>
         <script src="js/wow.min.js"></script>
         <script src="js/slick.min.js"></script>
+        <script src="{{asset('js/contactform.js')}}"></script>
         <script>
+            
             new WOW().init();
+            
+            
             $(document).ready(function(){
                 $('.customer-logos').slick({
                     slidesToShow: 6,
@@ -75,6 +79,7 @@
                     }]
                 });
             });
+            
         </script>
     </body>
 

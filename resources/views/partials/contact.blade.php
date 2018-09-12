@@ -4,7 +4,7 @@
             <!-- Contact Form Area -->
             <div class="col-12 col-lg-8 offset-lg-2">
                 <div class="section-heading text-center">
-                    <h2>¡Hablemos!</h2>
+                    <h2>¡Tomemos un café!</h2>
                 </div>
                 <hr>
                 <br>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <br>
-                            <button class="btn btn-xl js-scroll-trigger btn-info" type="submit">Enviar mensaje</button>
+                            <button class="btn btn-xl js-scroll-trigger btn-info btn-submit" type="submit">Enviar mensaje</button>
                             <button type="button" class="btn btn-xl js-scroll-trigger btn-info btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
                         </div>
                     </form>
@@ -47,7 +47,7 @@
         <div class="row">
             <!-- Contact Information -->
             <div class="col-12">
-                <div class="map-area  box-shadow">
+                <div class="map-area box-shadow">
                     {!! $map['map_html'] !!}
                 </div>
             </div>
@@ -60,18 +60,18 @@
         <br>
         <ul class="list-inline list-social">
             <li class="list-inline-item social-twitter wow slideInLeft">
-                <a href="#">
+                <a href="https://twitter.com/{{$companyInfo->twitter}}" target="_blank">
                     <i class="fa fa-twitter" style="margin-top:20px;"></i>
                 </a>
             </li>
             <li class="list-inline-item social-facebook wow slideInUp">
-                <a href="#">
+                <a href="https://facebook.com/{{$companyInfo->facebook}}" target="_blank">
                     <i class="fa fa-facebook" style="margin-top:20px;"></i>
                 </a>
             </li>
             <li class="list-inline-item social-google-plus wow slideInRight">
-                <a href="#">
-                    <i class="fa fa-google-plus" style="margin-top:20px;"></i>
+                <a href="https://instagram.com/{{$companyInfo->instagram}}" target="_blank">
+                    <i class="fa fa-instagram" style="margin-top:20px;"></i>
                 </a>
             </li>
         </ul>

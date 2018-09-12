@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
-    protected $fillable = ['title','subtitle','caption','image','button','button_target','banner_type_id'];
+    protected $fillable = ['title','subtitle','caption','image','button','button_target','url','banner_type_id'];
 
     public function target(){
     	return $this->hasOne('App\SectionType','id','button_target');

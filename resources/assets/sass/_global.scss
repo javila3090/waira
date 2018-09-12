@@ -51,6 +51,22 @@ section {
     }
 }
 
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.box-shadow{
+  -webkit-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+  box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+}
+
+.about-img img {
+    margin-left: -15px;
+    max-width: 100%;
+}
+
 /* Tamaño Fuentes
 ------------------------------------------------------------------ */
 .size-48px {
@@ -244,7 +260,8 @@ section {
     text-align: center;
 }
 
-/* DEMO-SPECIFIC STYLES */
+/* Typewriter animation */
+
 .typewriter h1 {
     color: #fff;
     font-size: 80px !important;
@@ -259,7 +276,6 @@ section {
         blink-caret .5s step-end infinite;
 }
 
-/* The typing effect */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -274,11 +290,6 @@ section {
 .about-img {
     height: auto;
     overflow: hidden;
-}
-
-.about-img img {
-    margin-left: -15px;
-    max-width: 100%;
 }
 
 /* Slider */
@@ -419,207 +430,83 @@ section {
 
 }
 
-.carousel-showmanymoveone
-{
-    .carousel-control
-    { 
-        width: 4%;
-        background-image:none;
-
-        &.left 
-        {
-            margin-left:15px;
-        }
-
-        &.right 
-        {
-            margin-right:15px;
-        }
-    }
-
-    .cloneditem-1, 
-    .cloneditem-2, 
-    .cloneditem-3
-    {
-        display: none;
-    }
-
-    .carousel-inner
-    {
-        @media all and (min-width: 768px)
-        {
-            @media (transform-3d), (-webkit-transform-3d)
-            {
-                > .item.active.right,
-                > .item.next
-                { 
-                    transform: translate3d(50%, 0, 0);  
-                    left: 0;
-                }
-
-                > .item.active.left,
-                > .item.prev
-                { 
-                    transform: translate3d(-50%, 0, 0);
-                    left: 0;
-                }
-
-                > .item.left,
-                > .item.prev.right,
-                > .item.active
-                {
-                    transform: translate3d(0, 0, 0);
-                    left: 0;
-                }    
-            } 
-
-            > .active.left,
-            > .prev
-            {
-                left: -50%;
-            }
-
-            > .active.right,
-            > .next
-            {
-                left:  50%;
-            }
-
-            > .left,
-            > .prev.right,
-            > .active
-            {
-                left: 0;
-            }
-
-            .cloneditem-1 
-            {
-                display: block;
-            }
-        }
-
-        @media all and (min-width: 992px)
-        {    
-            @media (transform-3d), (-webkit-transform-3d)
-            {
-                > .item.active.right,
-                > .item.next
-                { 
-                    transform: translate3d(25%, 0, 0);  
-                    left: 0;
-                }    
-
-                > .item.active.left,
-                > .item.prev
-                { 
-                    transform: translate3d(-25%, 0, 0);
-                    left: 0;
-                }
-
-                > .item.left,
-                > .item.prev.right,
-                > .item.active
-                {
-                    transform: translate3d(0, 0, 0);
-                    left: 0;
-                }
-            }
-
-            > .active.left,
-            > .prev
-            {
-                left: -25%;
-            }
-
-            > .active.right,
-            > .next
-            {
-                left:  25%;
-            }
-
-            > .left,
-            > .prev.right,
-            > .active
-            {
-                left: 0;
-            }
-
-            .cloneditem-2, 
-            .cloneditem-3
-            {
-                display: block;
-            }
-        }    
-    }
-}
-
-.center {
-    margin: auto;
-    width: 50%;
-}
+/* Portfolio section */
 
 .portfolio-item {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  max-width: 530px;
-  margin: auto auto 1rem;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-width: 530px;
+    margin: auto auto 1rem;
 }
 
 .portfolio-item .caption {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 37, 41, 0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 .portfolio-item .caption .caption-content {
-  color: #fff;
-  margin: auto 2rem 2rem;
+    color: #fff;
+    margin: auto 2rem 2rem;
 }
 
 .portfolio-item .caption .caption-content h2 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
 
 .portfolio-item .caption .caption-content p {
-  font-weight: 300;
-  font-size: 1.2rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.caption-text{
+    display: none;
 }
 
 @media (min-width: 992px) {
-  .portfolio-item {
-    max-width: none;
-    margin: 0;
-  }
-  .portfolio-item .caption {
-    -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
-    -webkit-clip-path: inset(0px);
-    clip-path: inset(0px);
-  }
-  .portfolio-item .caption .caption-content {
-    transition: opacity 0.25s;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-  }
-  .portfolio-item img {
-    -webkit-transition: -webkit-clip-path 0.25s ease-out;
-    -webkit-clip-path: inset(-1px);
-    clip-path: inset(-1px);
-  }
-  .portfolio-item:hover img {
-    -webkit-clip-path: inset(2rem);
-    clip-path: inset(2rem);
-  }
-  .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
-    -webkit-clip-path: inset(2rem);
-    clip-path: inset(2rem);
-  }
+    .portfolio-item {
+        max-width: none;
+        margin: 0;
+    }
+    .portfolio-item .caption {
+        -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+        -webkit-clip-path: inset(0px);
+        clip-path: inset(0px);
+    }
+    .portfolio-item .caption .caption-content {
+        transition: opacity 0.25s;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-bottom: 5rem;
+    }
+    .portfolio-item img {
+        -webkit-transition: -webkit-clip-path 0.25s ease-out;
+        -webkit-clip-path: inset(-1px);
+        clip-path: inset(-1px);
+    }
+    .portfolio-item:hover img {
+        -webkit-clip-path: inset(2rem);
+        clip-path: inset(2rem);
+    }
+    .portfolio-item:hover .caption {
+        background-color: rgba(29, 128, 159, 0.9);
+        -webkit-clip-path: inset(2rem);
+        clip-path: inset(2rem);
+        .caption-text {
+            display: block; 
+        }
+    }
+}
+
+@media (max-width:767px){
+    .typewriter h1{
+        font-size: 52px !important;
+    }
 }

@@ -11,107 +11,113 @@ use App\CompanyInfo;
 
 class CompanyController extends Controller
 {
-	public function index(){
+    public function index(){
 
-		$company = CompanyInfo::first();
+        $company = CompanyInfo::first();
 
-		if(count($company)>0){
-			return view('admin.company.edit',compact('company'));
-		}
+        if(count($company)>0){
+            return view('admin.company.edit',compact('company'));
+        }
 
-		return view('admin.company.index');
-	}
+        return view('admin.company.index');
+    }
 
-	public function store(){
+    public function store(){
 
-		$rules = array(
-			'name' => 'required',
-			'phone_1' => 'required',
+        $rules = array(
+            'name' => 'required',
+            'phone_1' => 'required',
             'email_1' => 'required|string|email|max:255',		
-		);
+        );
 
-		$validator = Validator::make(Input::all(), $rules);
+        $validator = Validator::make(Input::all(), $rules);
 
-		if ($validator->fails()) {
+        if ($validator->fails()) {
 
-			$messages = $validator->messages();
-			return redirect('admin/company')->withErrors($messages);
+            $messages = $validator->messages();
+            return redirect('admin/company')->withErrors($messages);
 
-		}else{
+        }else{
 
-			$file = Input::file('logo');
+            $file = Input::file('logo');
 
-			if($file != ""){
+            if($file != ""){
                 //Creamos una instancia de la libreria instalada   
-				$image = Image::make(Input::file('logo'));
+                $image = Image::make(Input::file('logo'));
                 //Ruta donde queremos guardar las imagenes
-				$path = public_path().'/uploads/logo/';
+                $path = public_path().'/uploads/logo/';
                 // Guardar
-				$image->save($path.$file->getClientOriginalName());
-			}
+                $image->save($path.$file->getClientOriginalName());
+            }
             //Guardamos nombre y nombreOriginal en la BD
             $company = new Company();
-			$company->name = Input::get('name');
-			$company->phone_1 = Input::get('phone_1');
-			$company->phone_2 = Input::get('phone_2');
-			$company->email_1 = Input::get('email_1');
-			$company->email_2 = Input::get('email_2');
-			$company->address = Input::get('address');
-			$company->review = Input::get('review');
-			if($file != ""){
-				$company->logo = 'uploads/logo/'.$file->getClientOriginalName();
-			}
-			$company->save(); 
-		}
+            $company->name = Input::get('name');
+            $company->phone_1 = Input::get('phone_1');
+            $company->phone_2 = Input::get('phone_2');
+            $company->email_1 = Input::get('email_1');
+            $company->email_2 = Input::get('email_2');
+            $company->address = Input::get('address');
+            $company->facebook = Input::get('facebook');
+            $company->twitter = Input::get('twitter');
+            $company->instagram = Input::get('instagram');
+            $company->review = Input::get('review');
+            if($file != ""){
+                $company->logo = 'uploads/logo/'.$file->getClientOriginalName();
+            }
+            $company->save(); 
+        }
 
-		return redirect('admin/company')->with('message', '¡Registro guardado con éxito!');
+        return redirect('admin/company')->with('message', '¡Registro guardado con éxito!');
 
-	}	
+    }	
 
-	public function update($id){
+    public function update($id){
 
-		$company = CompanyInfo::find($id);
+        $company = CompanyInfo::find($id);
 
-		$rules = array(
-			'name' => 'required',
-			'phone_1' => 'required',
+        $rules = array(
+            'name' => 'required',
+            'phone_1' => 'required',
             'email_1' => 'required|string|email|max:255',		
-		);
+        );
 
-		$validator = Validator::make(Input::all(), $rules);
+        $validator = Validator::make(Input::all(), $rules);
 
-		if ($validator->fails()) {
+        if ($validator->fails()) {
 
-			$messages = $validator->messages();
-			return redirect('admin/company')->withErrors($messages);
+            $messages = $validator->messages();
+            return redirect('admin/company')->withErrors($messages);
 
-		}else{
+        }else{
 
-			$file = Input::file('logo');
+            $file = Input::file('logo');
 
-			if($file != ""){
+            if($file != ""){
                 //Creamos una instancia de la libreria instalada   
-				$image = Image::make(Input::file('logo'));
+                $image = Image::make(Input::file('logo'));
                 //Ruta donde queremos guardar las imagenes
-				$path = public_path().'/uploads/logo/';
+                $path = public_path().'/uploads/logo/';
                 // Guardar
-				$image->save($path.$file->getClientOriginalName());
-			}
+                $image->save($path.$file->getClientOriginalName());
+            }
             //Guardamos nombre y nombreOriginal en la BD
-			$company->name = Input::get('name');
-			$company->phone_1 = Input::get('phone_1');
-			$company->phone_2 = Input::get('phone_2');
-			$company->email_1 = Input::get('email_1');
-			$company->email_2 = Input::get('email_2');
-			$company->address = Input::get('address');
-			$company->review = Input::get('review');
-			if($file != ""){
-				$company->logo = 'uploads/logo/'.$file->getClientOriginalName();
-			}
-			$company->update(); 
-		}
+            $company->name = Input::get('name');
+            $company->phone_1 = Input::get('phone_1');
+            $company->phone_2 = Input::get('phone_2');
+            $company->email_1 = Input::get('email_1');
+            $company->email_2 = Input::get('email_2');
+            $company->address = Input::get('address');
+            $company->facebook = Input::get('facebook');
+            $company->twitter = Input::get('twitter');
+            $company->instagram = Input::get('instagram');
+            $company->review = Input::get('review');
+            if($file != ""){
+                $company->logo = 'uploads/logo/'.$file->getClientOriginalName();
+            }
+            $company->update(); 
+        }
 
-		return redirect('admin/company')->with('message', '¡Registro actualizado con éxito!');
+        return redirect('admin/company')->with('message', '¡Registro actualizado con éxito!');
 
-	}
+    }
 }

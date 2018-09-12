@@ -76,6 +76,7 @@ class BannerController extends Controller
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');
 			$banner->banner_type_id = Input::get('banner_type_id');
+			$banner->url = Input::get('url');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}
@@ -133,6 +134,7 @@ class BannerController extends Controller
 			$banner->banner_type_id = Input::get('banner_type_id');
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');
+            $banner->url = Input::get('url');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}

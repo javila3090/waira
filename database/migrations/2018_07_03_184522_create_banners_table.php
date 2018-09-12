@@ -21,6 +21,7 @@ class CreateBannersTable extends Migration
             $table->string('subtitle')->nullable();
             $table->string('button')->nullable();
             $table->string('button_target')->nullable();
+            $table->string('url')->nullable();
             $table->unsignedInteger('banner_type_id');
             $table->foreign('banner_type_id')->references('id')->on('banner_types');
             $table->timestamps();
