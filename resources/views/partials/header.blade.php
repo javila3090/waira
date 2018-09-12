@@ -3,8 +3,8 @@
         <div class="row h-100">
             <div class="col-lg-7 my-auto">
                 <div class="header-content mx-auto typewriter">
-                    <h1 class="mb-5" style="font-size:80px;">{{$main->title}}</h1>
-                    <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Portafolio</a>
+                    <h1 class="mb-5 size-80px">{{$main->title}}</h1>
+                    <a href="#portfolio" class="btn btn-outline btn-xl js-scroll-trigger">Portafolio</a>
                 </div>
             </div>
             <div class="col-lg-5 my-auto">

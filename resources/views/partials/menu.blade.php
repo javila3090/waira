@@ -13,12 +13,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
-                </li>                
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#clients">Clientes</a>
-                </li>
+                </li>                 
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#portfolio">Portafolio</a>
+                </li>                               
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#clients">Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
