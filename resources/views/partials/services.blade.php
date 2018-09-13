@@ -15,7 +15,7 @@
                                 <br>
                                 <br>
                                 <br>
-                                <h3>{{$sb->title}}</h3>
+                                <h3 style="font-weight:400;">{{$sb->title}}</h3>
                                 <hr>
                                 <br>
                                 <button data-toggle="collapse" class="btn btn-theme size-12px" data-target="#{{$sb->id}}">Ver más</button>
