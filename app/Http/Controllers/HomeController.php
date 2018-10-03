@@ -6,11 +6,36 @@ use App\Banner;
 use App\BannerType;
 use App\Section;
 use App\CompanyInfo;
+use SEOMeta;
+use OpenGraph;
+use Twitter;
+## or
+use SEO;
 
 
 class HomeController extends Controller
 {
     public function index(){
+
+        SEOMeta::setTitle('Inicio');
+        SEOMeta::setDescription('Home page to waira site');
+
+        OpenGraph::setDescription('Home page to waira site');
+        OpenGraph::setTitle('Inicio');
+        OpenGraph::setUrl('https://wairadev.cl');
+        OpenGraph::addProperty('type', 'Home');
+
+        Twitter::setTitle('Homepage');
+        Twitter::setSite('@jcesaravila');
+
+        ## Or
+
+        SEO::setTitle('Inicio');
+        SEO::setDescription('Home page to waira site');
+        SEO::opengraph()->setUrl('https://wairadev.cl');
+        SEO::opengraph()->addProperty('type', 'Home');
+        SEO::twitter()->setSite('@jcesaravila');
+
 
         $main = Section::where('section_type_id',6)->first();
         $homeBanners = Banner::where('banner_type_id',1)->get();
@@ -26,7 +51,7 @@ class HomeController extends Controller
         $clients = Section::where('section_type_id',5)->first();
         $clientBanners = Banner::where('banner_type_id',6)->get();
         $portfolioBanners = Banner::where('banner_type_id',7)->get();
-        
+
         //Mapa
         $config = array();
         $config['center'] = '-33.43771,-70.69317949999999';
@@ -39,14 +64,14 @@ class HomeController extends Controller
             }
             centreGot = true;';
 
-            app('map')->initialize($config);
+        app('map')->initialize($config);
 
-            $marker = array();
-            app('map')->add_marker($marker);
+        $marker = array();
+        app('map')->add_marker($marker);
 
-            $map = app('map')->create_map();
-            $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
+        $map = app('map')->create_map();
+        $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
 
-            return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','map','portfolioBanners'));
-        }
+        return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','map','portfolioBanners'));
     }
+}

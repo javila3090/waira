@@ -5,7 +5,7 @@
     @include transition-all;
     @include heading-font;
     .navbar-brand {
-        color: $theme-primary;
+        color: white;
         @include heading-font;
         &:hover,
         &:focus {
@@ -46,14 +46,14 @@
             color: fade(white, 70%);
             &:hover,
             &:focus {
-                color: white;
+                color: $theme-primary;
             }
         }
         .navbar-nav > li > a,
         .navbar-nav > li > a:focus {
             color: fade-out(white, .3);
             &:hover {
-                color: white;
+                color: $theme-primary;
             }
         }
         &.navbar-shrink {

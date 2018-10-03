@@ -1,7 +1,19 @@
 <html lang="en">
 
     <head>
+        {!! SEOMeta::generate() !!}
+        {!! OpenGraph::generate() !!}
+        {!! Twitter::generate() !!}
+        <!-- OR -->
+        {!! SEO::generate() !!}
 
+        <!-- MINIFIED -->
+        {!! SEO::generate(true) !!}
+
+
+        <!-- LUMEN -->
+        {!! app('seotools')->generate() !!}
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -53,10 +65,10 @@
         <script src="js/slick.min.js"></script>
         <script src="{{asset('js/contactform.js')}}"></script>
         <script>
-            
+
             new WOW().init();
-            
-            
+
+
             $(document).ready(function(){
                 $('.customer-logos').slick({
                     slidesToShow: 6,
@@ -79,7 +91,7 @@
                     }]
                 });
             });
-            
+
         </script>
     </body>
 

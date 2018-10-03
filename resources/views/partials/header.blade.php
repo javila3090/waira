@@ -8,18 +8,12 @@
                 </div>
             </div>
             <div class="col-lg-5 my-auto">
-                <div class="">
-                    <div class="">
-                        <div class="">
-                            <div class="wow flipInY">
-                                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="{{$main->image}}" class="img-fluid" alt="">
-                            </div>
-                            <div class="button">
-                                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                            </div>
-                        </div>
-                    </div>
+                <div class="wow flipInY">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="{{$main->image}}" class="img-fluid" alt="">
+                </div>
+                <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                 </div>
             </div>
         </div>
