@@ -48,7 +48,7 @@
             <!-- Contact Information -->
             <div class="col-12">
                 <div class="map-area box-shadow">
-                    {!! $map['map_html'] !!}
+                    {!! Mapper::render() !!}
                 </div>
             </div>
         </div>

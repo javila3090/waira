@@ -1,4 +1,4 @@
-<section class=" bg-primary text-center" id="download">
+<section class=" text-center" id="download" style="background-color:#f2f2f2;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto mb-50">

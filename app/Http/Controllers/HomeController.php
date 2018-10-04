@@ -11,6 +11,7 @@ use OpenGraph;
 use Twitter;
 ## or
 use SEO;
+use Mapper;
 
 
 class HomeController extends Controller
@@ -36,7 +37,6 @@ class HomeController extends Controller
         SEO::opengraph()->addProperty('type', 'Home');
         SEO::twitter()->setSite('@jcesaravila');
 
-
         $main = Section::where('section_type_id',6)->first();
         $homeBanners = Banner::where('banner_type_id',1)->get();
         $aboutUs = Section::where('section_type_id',1)->first();
@@ -53,7 +53,7 @@ class HomeController extends Controller
         $portfolioBanners = Banner::where('banner_type_id',7)->get();
 
         //Mapa
-        $config = array();
+        /*$config = array();
         $config['center'] = '-33.43771,-70.69317949999999';
         $config['zoom'] = 15;
         $config['onboundschanged'] = 'if (!centreGot) {
@@ -70,8 +70,10 @@ class HomeController extends Controller
         app('map')->add_marker($marker);
 
         $map = app('map')->create_map();
-        $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
+        $map = array('map_js' => $map['js'], 'map_html' => $map['html']);*/
 
-        return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','map','portfolioBanners'));
+        Mapper::map(-33.43771, -70.69317949999999, ['zoom' => 16, 'markers' => ['title' => 'Waira Dev', 'animation' => 'DROP']]);
+        
+        return view('welcome',compact('homeBanners','main','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','clients','clientBanners','portfolioBanners'));
     }
 }

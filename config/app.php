@@ -162,6 +162,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
 
     ],
 
@@ -218,7 +219,8 @@ return [
         'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
         'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
         // or
-        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,        
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 
     ],
 
