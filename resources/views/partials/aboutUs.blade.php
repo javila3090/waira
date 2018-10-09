@@ -16,7 +16,7 @@
                 </div>
             </div>            
             <div class="col-md-6 col-12 wow bounceInDown" style="padding: 10px;">
-                <img src="{{$aboutUs->image}}" class="img img-fluid rounded box-shadow" data-wow-delay="1s">
+                <img src="{{$aboutUs->image}}" class="img img-fluid rounded" data-wow-delay="1s">
             </div>
         </div>
     </div>

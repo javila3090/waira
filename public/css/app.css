@@ -680,9 +680,9 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url(/images/bg-pattern.png?3c6467278a66af3216348e8588a69062), #14648E;
-  background: url(/images/bg-pattern.png?3c6467278a66af3216348e8588a69062), -webkit-gradient(linear, right top, left top, from(#777), to(#14648E));
-  background: url(/images/bg-pattern.png?3c6467278a66af3216348e8588a69062), linear-gradient(to left, #777, #14648E);
+  background: url(/images/wallpaper.jpg?e9c731a76aa2abc98517715ecd5c3aae), #14648E;
+  background: url(/images/wallpaper.jpg?e9c731a76aa2abc98517715ecd5c3aae), -webkit-gradient(linear, right top, left top, from(#777), to(#14648E));
+  background: url(/images/wallpaper.jpg?e9c731a76aa2abc98517715ecd5c3aae), linear-gradient(to left, #777, #14648E);
 }
 
 header.masthead .header-content {
