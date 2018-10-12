@@ -57,9 +57,9 @@ section {
 }
 
 .box-shadow{
-  -webkit-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
-  -moz-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
-  box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
+    box-shadow: 3px 9px 25px -6px rgba(0,0,0,0.75);
 }
 
 .about-img img {
@@ -262,23 +262,92 @@ section {
 
 /* Typewriter animation */
 
-.typewriter h1 {
+#typing1
+{
     color: $theme-primary;
-    font-size: 80px !important;
+    font-size: 70px !important;
     font-family: monospace;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
+    //border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0.09em; /* Adjust as needed */
-    animation: 
-        typing 2s steps(30, end),
-        blink-caret .5s step-end infinite;
+    letter-spacing: 0.02em; /* Adjust as needed */
+    -webkit-animation: frag1type 10s steps(50, end) 0s infinite,blink-caret .5s step-end infinite;
+    animation: frag1type 10s steps(50, end) 0s infinite,blink-caret .5s step-end infinite;
+}
+@keyframes frag1type{
+
+    from { width: 0;}
+    37%{width:11em;}
+    49%{width:0;}
+    100%{width:0;}
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+@-webkit-keyframes frag1type{
+    from { width: 0;}
+    37%{width:11em;}
+    49%{width:0;}
+    100%{width:0;}
+}
+
+#typing2
+{
+    margin-top:-95px !important;
+    opacity: 0;
+    color: $theme-primary;
+    font-size: 70px !important;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    //border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.02em; /* Adjust as needed */
+    -webkit-animation: frag2type 10s steps(50, end) 5s infinite, blink-caret .5s step-end infinite;
+    animation: frag2type 10s steps(50, end) 5s infinite, blink-caret .5s step-end infinite;
+}
+@keyframes frag2type{
+
+    from { width: 0; opacity:1; }
+    37%{width:11em;opacity:1; }
+    49%{width:0;opacity:1; }
+    100%{width:0;opacity:1; }
+}
+
+@-webkit-keyframes frag2type{
+    from { width: 0; opacity:1; }
+    37%{width:11em;opacity:1; }
+    49%{width:0;opacity:1; }
+    100%{width:0;opacity:1; }
+}
+
+#typing3
+{
+    margin-top:-65px !important;
+    opacity: 0;
+    color: $theme-primary;
+    font-size: 48px !important;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    //border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.03em; /* Adjust as needed */
+    -webkit-animation: frag3type 10s steps(50, end) 10s infinite, blink-caret .5s step-end infinite;
+    animation: frag3type 10s steps(50, end) 10s infinite, blink-caret .5s step-end infinite;
+}
+@keyframes frag3type{
+
+    from { width: 0; opacity:1; }
+    37%{width:12em;opacity:1; }
+    49%{width:0;opacity:1; }
+    100%{width:0;opacity:1; }
+}
+
+@-webkit-keyframes frag3type{
+    from { width: 0; opacity:1; }
+    37%{width:12em;opacity:1; }
+    49%{width:0;opacity:1; }
+    100%{width:0;opacity:1; }
 }
 
 /* The typewriter cursor effect */
@@ -509,4 +578,37 @@ section {
     .typewriter h1{
         font-size: 52px !important;
     }
+    #typing1{
+        font-size: 32px !important;
+    }
+    #typing2{
+        margin-top:-50px !important;
+        font-size: 32px !important;
+    }
+    @keyframes frag1type{
+        from { width: 0; opacity:1; }
+        37%{width:10em;opacity:1; }
+        49%{width:0;opacity:1; }
+        100%{width:0;opacity:1; }
+    }
+
+    @-webkit-keyframes frag1type{
+        from { width: 0; opacity:1; }
+        37%{width:10em;opacity:1; }
+        49%{width:0;opacity:1; }
+        100%{width:0;opacity:1; }
+    }
+    @keyframes frag2type{
+        from { width: 0; opacity:1; }
+        37%{width:10em;opacity:1; }
+        49%{width:0;opacity:1; }
+        100%{width:0;opacity:1; }
+    }
+
+    @-webkit-keyframes frag2type{
+        from { width: 0; opacity:1; }
+        37%{width:10em;opacity:1; }
+        49%{width:0;opacity:1; }
+        100%{width:0;opacity:1; }
+    }    
 }
